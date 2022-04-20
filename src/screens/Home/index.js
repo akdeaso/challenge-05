@@ -151,7 +151,14 @@ const Home = () => {
       ListHeaderComponent={() => {
         return (
           <View>
-            <Text style={styles.mainTitle}>Good Morning, {name}!</Text>
+            <View style={styles.top}>
+              <Text style={styles.mainTitle}>Good Morning, {name}!</Text>
+              <TouchableOpacity
+                style={styles.Button}
+                onPress={() => navigate('MediaHandling')}>
+                <Text style={styles.text}>Media Handling</Text>
+              </TouchableOpacity>
+            </View>
             <Text style={styles.mainTitle}>Recommended</Text>
             <View>
               <FlatList
@@ -182,6 +189,10 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(13),
     marginVertical: moderateScale(10),
     marginLeft: moderateScale(13),
+  },
+  top: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
   text: {
     color: 'white',
@@ -251,6 +262,9 @@ const styles = StyleSheet.create({
   spinnerTextStyle: {
     color: 'white',
   },
+  Button: {
+    backgroundColor: '#E31212',
+    padding: ms(8),
+    borderRadius: ms(10),
+  },
 });
-
-//listheadercomponent atau listfootercomponent

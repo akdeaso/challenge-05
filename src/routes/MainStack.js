@@ -7,6 +7,7 @@ import BookDetail from '../screens/BookDetail';
 import SuccessRegister from '../screens/SuccessRegister';
 import NoConnection from '../components/NoConnection';
 import {useSelector} from 'react-redux';
+import MediaHandling from '../screens/MediaHandling';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const Routes = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SuccessRegister" component={SuccessRegister} />
         <Stack.Screen name="NoConnection" component={NoConnection} />
+        <Stack.Screen name="MediaHandling" component={MediaHandling} />
       </Stack.Navigator>
     );
   } else {
@@ -35,6 +37,7 @@ const Routes = () => {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="NoConnection" component={NoConnection} />
+        <Stack.Screen name="MediaHandling" component={MediaHandling} />
       </Stack.Navigator>
     );
   }
