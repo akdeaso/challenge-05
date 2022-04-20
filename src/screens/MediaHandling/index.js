@@ -1,16 +1,15 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {ms} from 'react-native-size-matters';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import Video from 'react-native-video';
+import Pdf from 'react-native-pdf';
 
-const MediaHandling = ({navigation}) => {
+const MediaHandling = () => {
   return (
     <View style={styles.main}>
       <Text style={styles.mainTitle}>Media Handling</Text>
       <View style={styles.contentContainer}>
-        <View style={styles.content}>
+        <View>
           <Text style={styles.text}>Video Handling</Text>
           <Video
             source={{
@@ -20,8 +19,15 @@ const MediaHandling = ({navigation}) => {
             repeat={true}
           />
         </View>
-        <View style={styles.content}>
+        <View>
           <Text style={styles.text}>Document Handling</Text>
+          <Pdf
+            source={{
+              uri: 'http://samples.leanpub.com/thereactnativebook-sample.pdf',
+            }}
+            style={styles.pdf}
+            fullscreen
+          />
         </View>
       </View>
     </View>
@@ -45,42 +51,22 @@ const styles = StyleSheet.create({
   contentContainer: {
     marginTop: ms(15),
   },
-  content: {
-    // marginVertical: ms(5),
-  },
   text: {
     color: 'white',
     fontSize: ms(14),
     textAlign: 'center',
     marginBottom: ms(5),
   },
-  button: {
-    marginBottom: ms(10),
-    marginHorizontal: ms(10),
-    alignItems: 'center',
-    backgroundColor: '#E31212',
-    paddingVertical: ms(10),
-    borderRadius: ms(10),
-    shadowColor: 'red',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  buttonText: {
-    fontSize: ms(14),
-    color: 'white',
-    fontWeight: '700',
-    textAlign: 'center',
-    alignContent: 'center',
-  },
   video: {
-    width: 300,
-    height: 300,
-    marginLeft: ms(50),
+    width: ms(300),
+    height: ms(300),
+    marginLeft: ms(80),
     marginBottom: ms(-130),
+  },
+  pdf: {
+    width: ms(300),
+    height: ms(300),
+    alignItems: 'center',
+    alignSelf: 'center',
   },
 });

@@ -27,6 +27,8 @@ target 'bookApp' do
 
   pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
 
+  pod 'react-native-blob-util', :path => '../node_modules/react-native-blob-util'
+
   target 'bookAppTests' do
     inherit! :complete
     # Pods for testing
