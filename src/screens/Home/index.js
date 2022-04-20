@@ -19,7 +19,7 @@ import {navigate} from '../../helpers/navigate';
 import formatRupiah from '../../components/Rupiah';
 
 const Home = () => {
-  const {loading, refreshing, connection} = useSelector(state => state.Global);
+  const {loading, refreshing} = useSelector(state => state.Global);
   const {dataBook = []} = useSelector(state => state.home);
   const {name} = useSelector(state => state.login);
   const dispatch = useDispatch();
@@ -179,10 +179,9 @@ const styles = StyleSheet.create({
   mainTitle: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: moderateScale(20),
+    fontSize: moderateScale(13),
     marginVertical: moderateScale(10),
     marginLeft: moderateScale(13),
-    fontSize: moderateScale(13),
   },
   text: {
     color: 'white',

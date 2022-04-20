@@ -5,14 +5,13 @@ import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 import Logo from '../../assets/logo2.png';
 import axios from 'axios';
 import {BaseUrl} from '../../helpers/api';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {setName, setToken} from './redux/action';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  //   const {token} = useSelector(state => state.login);
 
   const validate = (email, password) => {
     if (email.length === 0 || password.length === 0) {
@@ -26,10 +25,6 @@ const Login = ({navigation}) => {
       return body;
     }
   };
-
-  //   if (token.length !== 0) {
-  //     navigation.navigate('Home');
-  //   }
 
   const postLogin = async () => {
     try {
@@ -45,11 +40,12 @@ const Login = ({navigation}) => {
       };
       getName();
       getToken();
-      if (results.status === 201 || results.status === 200)
+      if (results.status === 201 || results.status === 200) {
         navigation.navigate('Home');
+      }
     } catch (error) {
       console.log(error);
-      Alert.alert('Error', `User doesn't exist, please register`);
+      Alert.alert('Error', "User doesn't exist, please register");
     }
   };
 

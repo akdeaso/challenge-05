@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
-import React, {useEffect} from 'react';
+import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useDispatch, useSelector} from 'react-redux';
 import {ms} from 'react-native-size-matters';
-import {goBack, navigate} from '../helpers/navigate';
+import {goBack} from '../helpers/navigate';
 import {setConnection} from '../store/globalAction';
 
 const NoConnection = () => {
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: ms(20),
     marginTop: ms(30),
-    fontSize: ms(20),
     alignSelf: 'center',
   },
   text: {

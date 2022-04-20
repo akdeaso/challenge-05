@@ -13,15 +13,15 @@
 // };
 
 export const setName = payload => {
-    return {
-        type: 'SET_NAME',
-        data: payload,
-    };
+  return {
+    type: 'SET_NAME',
+    data: payload,
+  };
 };
 
 export const setToken = payload => {
-    return {
-        type: 'SET_TOKEN',
-        data: payload,
-    };
+  return {
+    type: 'SET_TOKEN',
+    data: payload,
+  };
 };

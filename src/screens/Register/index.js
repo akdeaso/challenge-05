@@ -1,12 +1,4 @@
-import {
-  Alert,
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  ScrollView,
-} from 'react-native';
+import {Alert, StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import {moderateScale} from 'react-native-size-matters';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';

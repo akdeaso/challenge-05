@@ -5,6 +5,7 @@ import {
   Image,
   RefreshControl,
   ScrollView,
+  Platform,
 } from 'react-native';
 import React, {useEffect} from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -19,9 +20,10 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {BaseUrl} from '../../helpers/api';
 import {setConnection, setRefresh} from '../../store/globalAction';
 import formatRupiah from '../../components/Rupiah';
+import {navigate} from '../../helpers/navigate';
 
 const BookDetail = ({navigation}) => {
-  const {loading, refreshing, connection} = useSelector(state => state.Global);
+  const {loading, refreshing} = useSelector(state => state.Global);
   const {detailBook = []} = useSelector(state => state.home);
   const dispatch = useDispatch();
 
@@ -78,7 +80,6 @@ const BookDetail = ({navigation}) => {
       sound: true,
     },
     popInitialNotification: true,
-    requestPermissions: true,
     requestPermissions: Platform.OS === 'ios',
   });
 
