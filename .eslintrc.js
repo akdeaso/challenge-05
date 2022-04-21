@@ -11,7 +11,11 @@ module.exports = {
       'error',
       {
         'no-inline-styles': false,
+        endOfLine: 'auto',
       },
     ],
+  },
+  env: {
+    jest: true,
   },
 };
