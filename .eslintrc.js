@@ -10,8 +10,8 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        'no-inline-styles': false,
         endOfLine: 'auto',
+        'no-inline-styles': false,
       },
     ],
   },
