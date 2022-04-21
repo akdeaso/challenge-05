@@ -34,6 +34,7 @@ const BookDetail = ({navigation}) => {
 
   useEffect(() => {
     getDetailBook();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onRefresh = () => {
