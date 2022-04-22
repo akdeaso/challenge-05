@@ -15,3 +15,4 @@ const formatRupiah = (angka, prefix) => {
 };
 
 export default formatRupiah;
+module.exports = formatRupiah;
